@@ -22,7 +22,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -34,7 +33,7 @@
                     <h3 class="panel-title">番职报修</h3>
                 </div>
                 <div class="panel-body">
-                    <form id="loginForm" role="form" method="get" action="./fixAdmin.html">
+                    <form id="loginForm" role="form" method="post" action="https://fatlitalk.github.io/bootstrapValidator/fixAdmin.html">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="账号" name="account" type="text" autofocus>
@@ -56,8 +55,7 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-		================================================== --> 
+<!-- Bootstrap core JavaScript --> 
 <!-- Placed at the end of the document so the pages load faster --> 
 <!-- <script src="js/jquery/jquery.min.js"></script>  -->
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -100,7 +98,7 @@ $(document).ready(function() {
                     notEmpty: {
                         message: '密码不能为空'
                     },
-					stringLength: {
+		    stringLength: {
                         max: 15,
                         message: '密码长度必须小于15个字符'
                     }
