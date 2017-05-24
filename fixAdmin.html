@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!-- 在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable=no 可以禁用其缩放（zooming）功能。 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<meta name="author" content="Fatli">
+<title>番职报修 | 后台管理系统</title>
+
+<!-- Bootstrap core CSS -->
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- 滚动条 -->
+<style>
+body {
+	/*	min-height: 20000px;*/
+	padding-top: 70px;
+	font-size: 10px;
+}
+</style>
+</head>
+
+<body>
+<!-- Fixed navbar 固定的顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="./fixAdmin.html">番职报修</a> </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./login.html"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 搜索 -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"> 
+            <!--- 搜索框-->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="输入用户姓名">
+                <!--- 搜索按钮--> 
+                <span class="input-group-btn">
+				<!-- <input type="submit" class="btn btn-success" value="搜索" />-->
+				<button class="btn btn-success" type="submit">搜索</button>
+                </span> </div>
+        </div>
+    </div>
+</div>
+
+<!-- 订单列表 --> 
+<!--<div class="container">-->
+<div style="margin-left: 50px;margin-right: 50px;">
+    <div class="row">
+        <div class="col-md-12"> <br>
+            <br>
+            <ul class="nav nav-tabs">
+                <li class="active"> <a href="#">用户列表</a> </li>
+                <li> <a href="./changePassword.html">修改密码</a> </li>
+            </ul>
+            <!-- 鼠标悬停：通过添加 .table-hover 类可以让 <tbody> 中的每一行对鼠标悬停状态作出响应。 --> 
+            <!-- 紧缩表格：通过添加 .table-condensed 类可以让表格更加紧凑，单元格中的内补（padding）均会减半。 -->
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>下单时间</th>
+                        <th>用户姓名</th>
+                        <th>设备名称</th>
+                        <th>设备问题</th>
+                        <th>设备密码</th>
+                        <th>电话号码</th>
+                        <th>宿舍号码</th>
+                        <th>维修单号</th>
+                        <th>备注</th>
+                        <th>维修状态</th>
+                        <th>修改状态</th>
+                        <th>实收</th>
+                        <th>成本</th>
+                        <th>利润</th>
+                        <th>接单人</th>
+                        <th>财报密码</th>
+                        <th>保存</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> 
+                        <!---下单时间-->
+                        <th>2017-05-04 18:00:36</th>
+                        <!---用户姓名-->
+                        <td><a href="#" role="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#addToBlacklist"> 老周 </a></td>
+                        <!---设备名称-->
+                        <td>三星笔记本</td>
+                        <!---设备问题-->
+                        <td>电脑报修-重装系统</td>
+                        <!---设备密码-->
+                        <td>123456789</td>
+                        <!---手机号码-->
+                        <td>15626236918</td>
+                        <!---宿舍号码-->
+                        <td>西5A405</td>
+                        <!---维修单号-->
+                        <td>123456789012345678</td>
+                        <!---备注，点击查看详情-->
+                        <td><a href="#" role="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#remark">详情</a></td>
+                        <!-- Button trigger modal --> 
+                        <!---订单状态-->
+                        <td>等待维修</td>
+                        <!--修改状态-->
+                        <td><a href="#" role="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#ChangeOrderStatus"> 修改状态</a></td>
+                        <!---实收-->
+                        <td><form action="#" method="post">
+                                <input style="width:70px;" type="text" class="form-control input-sm" placeholder="100.00" name="" value="">
+                            </form></td>
+                        <!---成本-->
+                        <td><form action="#" method="post">
+                                <input style="width:70px;" type="text" class="form-control input-sm" placeholder="100.00" name="" value="">
+                            </form></td>
+                        <!---利润-->
+                        <td>/</td>
+                        <!---接单人-->
+                        <td><select style="width: 88px;" class="form-control input-sm" name="">
+                                <option value="黎泽宇">黎泽宇</option>
+                                <option value="廖永贤">廖永贤</option>
+                                <option value="张健富">张健富</option>
+                                <option value="廖永贤">徐卓斌</option>
+                            </select></td>
+                        <!---权限密码-->
+                        <td><form action="#" method="post">
+                                <input style="width:70px;" type="password" class="form-control input-sm" name="" value="">
+                            </form></td>
+                        <!--保存-->
+                        <td><button type="submit" class="btn btn-success btn-sm">保存</button></td>
+                    </tr>        
+                </tbody>
+            </table>
+            <!-- 分页 --> 
+            <!-- 右浮动 -->
+            <nav class="pull-right">
+                <ul class="pager">
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">下一页</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--【备注remark-详情】按钮的模态框（弹出层），用于被调用--> 
+<!-- Modal -->
+<div class="modal fade" id="remark" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">备注详情</h4>
+            </div>
+            <div class="modal-body">
+                <p>当前数据</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+        <!-- /.modal-content --> 
+    </div>
+    <!-- /.modal-dialog --> 
+</div>
+<!-- /.modal --> 
+
+<!--【修改状态】按钮的模态框（弹出层），用于被调用--> 
+<!-- Modal -->
+<div class="modal fade" id="ChangeOrderStatus" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">修改状态</h4>
+            </div>
+            <div class="modal-body"> 
+                <!-- 修改状态_表单 -->
+                <form role="form" action="#" method="post">
+                   <div class="form-group">
+						<label class="radio-inline"> 
+							<!-- 注意：必须使用 name="inlineRadioOptions" ，才能实现单选-->
+							<input type="radio" name="inlineRadioOptions" value="">
+							等待维修 </label>
+						<label class="radio-inline">
+							<input type="radio" name="inlineRadioOptions" value="">
+							正在维修 </label>
+						<label class="radio-inline">
+							<input type="radio" name="inlineRadioOptions" value="">
+							维修成功 </label>
+						<label class="radio-inline">
+							<input type="radio" name="inlineRadioOptions" value="">
+							维修结束 </label>
+                  		<!-- 右浮动 class="pull-right" -->
+                   		<label class="radio-inline pull-right">
+							<input type="radio" name="inlineRadioOptions" value="">
+							删除订单 </label>
+                    </div>
+                    <div class="form-group">
+						<input type="password" class="form-control" placeholder="输入权限密码" name="" value="">
+					</div>
+                    <div class="form-group">
+						<button type="submit" class="btn btn-success">提交</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+                </form>
+            </div>
+        </div><!-- /.modal-content --> 
+    </div><!-- /.modal-dialog --> 
+</div><!-- /.modal --> 
+
+<!-- 点击【用户姓名】 → [加入黑名单] 的模态框（弹出层），用于被调用 -->
+<div class="modal fade" id="addToBlacklist" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title"> 加入黑名单 </h4>
+            </div>
+            <div class="modal-body"> 
+                <!-- 修改状态_表单 -->
+                <form role="form" action="#" method="post">
+                    <div class="form-group">
+						<p> 把该用户加入黑名单 </p>
+                    </div>
+                    <div class="form-group">
+						<input type="password" class="form-control" placeholder="输入权限密码" name="" value="">
+					</div>
+                    <div class="form-group">
+						<button type="submit" class="btn btn-success">提交</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+                </form>
+            </div>
+        </div><!-- /.modal-content --> 
+    </div><!-- /.modal-dialog --> 
+</div><!-- /.modal --> 
+
+
+<!-- Bootstrap core JavaScript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
